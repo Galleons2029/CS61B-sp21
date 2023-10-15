@@ -47,6 +47,21 @@ class GUISource implements InputSource {
             case "←" :
                 command = "Left";
                 break;
+
+            /** 由于中文语言下的系统无法识别以上箭头，
+             * 另外设置以下中文输出来适配中文环境。*/
+            case "向上箭头" :
+                command = "Up";
+                break;
+            case "向右箭头" :
+                command = "Right";
+                break;
+            case "向下箭头" :
+                command = "Down";
+                break;
+            case "向左箭头" :
+                command = "Left";
+                break;
             default :
                 break;
         }
