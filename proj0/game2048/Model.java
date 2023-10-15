@@ -124,7 +124,7 @@ public class Model extends Observable {
                 Tile t = board.tile(col, row);
                 if (board.tile(col, row) != null) {
                     // 如果有方块，则开始一直向上移动直到无空缺
-                    int block = row;
+                    int block = row;  // 用block作为最终需要移到的位置
                     while (block < board.size()-1 &&
                             board.tile(col, block+1) == null)
                     {
@@ -138,6 +138,7 @@ public class Model extends Observable {
                         merge = block;
                         score += board.tile(col, row).value()*2;
                     }
+                    // 在最终确定移动位置为block后开始移动
                     board.move(col, block, t);
                     if (block != row)
                     {
